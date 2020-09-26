@@ -20,11 +20,11 @@
             ],
             "labels": [
                 {
-                    "name": "traefik.http.routers.portainer.rule",
-                    "value": "Host(`portainer.pi.com`)"
+                    "name": "traefik.http.routers.deluge.rule",
+                    "value": "Host(`deluge.pi.com`)"
                 },
                 {
-                    "name": "traefik.http.services.portainer.loadbalancer.server.port",
+                    "name": "traefik.http.services.deluge.loadbalancer.server.port",
                     "value": "9000"
                 },
                 {
