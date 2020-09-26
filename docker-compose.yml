@@ -1,0 +1,36 @@
+version: "3"
+services:
+  traefik:
+    image: traefik
+    restart: always
+    container_name: traefik
+    command:
+      - --providers.docker=true
+      - --providers.docker.exposedByDefault=false
+      - --api.insecure=true
+      - --log.level=DEBUG
+    ports:
+      - 80:80
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN}`)
+      - traefik.http.services.traefik.loadbalancer.server.port=8080
+      - traefik.enable=true
+
+  portainer:
+    image: portainer/portainer-ce
+    restart: always
+    container_name: portainer
+    volumes:
+      - portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - traefik.http.routers.portainer.rule=Host(`portainer.${DOMAIN}`)
+      - traefik.http.services.portainer.loadbalancer.server.port=9000
+      - traefik.enable=true
+
+volumes:
+  portainer:
+    external: true

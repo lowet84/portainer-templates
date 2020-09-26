@@ -1,0 +1,13 @@
+{
+    "type": 1,
+    "title": "Deluge",
+    "description": "Headless BitTorrent client",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Deluge-Logo.svg/1024px-Deluge-Logo.svg.png",
+    "image": "linuxserver/deluge:latest",
+    "labels": [
+        {
+            "name": "com.example.vendor",
+            "value": "Acme"
+        }
+    ]
+}
