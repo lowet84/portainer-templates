@@ -4,6 +4,7 @@
         {
             "type": 1,
             "title": "Deluge",
+            "name": "deluge",
             "description": "Headless BitTorrent client",
             "categories": [
                 "torrent"
