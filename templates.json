@@ -1,13 +1,30 @@
 {
-    "type": 1,
-    "title": "Deluge",
-    "description": "Headless BitTorrent client",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Deluge-Logo.svg/1024px-Deluge-Logo.svg.png",
-    "image": "linuxserver/deluge:latest",
-    "labels": [
+    "version": "2",
+    "templates": [
         {
-            "name": "com.example.vendor",
-            "value": "Acme"
+            "type": 1,
+            "title": "Deluge",
+            "description": "Headless BitTorrent client",
+            "categories": [
+                "torrent"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Deluge-Logo.svg/1024px-Deluge-Logo.svg.png",
+            "image": "linuxserver/deluge:latest",
+            "labels": [
+                {
+                    "name": "traefik.http.routers.portainer.rule",
+                    "value": "Host(`portainer.pi.com`)"
+                },
+                {
+                    "name": "traefik.http.services.portainer.loadbalancer.server.port",
+                    "value": "9000"
+                },
+                {
+                    "name": "traefik.enable",
+                    "value": "true"
+                }
+            ]
         }
     ]
 }
