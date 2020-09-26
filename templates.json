@@ -14,7 +14,8 @@
             "network": "pi",
             "volumes": [
                 {
-                    "container": "/config"
+                    "container": "/config",
+                    "volume": "deluge"
                 }
             ],
             "labels": [
