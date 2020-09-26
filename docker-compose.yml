@@ -18,6 +18,8 @@ services:
       - traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN}`)
       - traefik.http.services.traefik.loadbalancer.server.port=8080
       - traefik.enable=true
+    networks:
+      - pi
 
   portainer:
     image: portainer/portainer-ce
@@ -30,7 +32,13 @@ services:
       - traefik.http.routers.portainer.rule=Host(`portainer.${DOMAIN}`)
       - traefik.http.services.portainer.loadbalancer.server.port=9000
       - traefik.enable=true
+    networks:
+      - pi
 
 volumes:
   portainer:
+    external: true
+
+networks:
+  pi:
     external: true
