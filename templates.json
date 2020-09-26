@@ -26,7 +26,7 @@
                 },
                 {
                     "name": "traefik.http.services.deluge.loadbalancer.server.port",
-                    "value": "9000"
+                    "value": "8112"
                 },
                 {
                     "name": "traefik.enable",
