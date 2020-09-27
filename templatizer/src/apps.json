@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Deluge",
+    "image": "linuxserver/deluge",
+    "port": 8112,
+    "description": "Headless BitTorrent client",
+    "logo":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Deluge-Logo.svg/1024px-Deluge-Logo.svg.png",
+    "storage": "/config"
+  }
+]

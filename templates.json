@@ -1,38 +1,38 @@
 {
-    "version": "2",
-    "templates": [
+  "version": "2",
+  "templates": [
+    {
+      "type": 1,
+      "title": "Deluge",
+      "name": "deluge",
+      "description": "Headless BitTorrent client",
+      "categories": [
+        "torrent"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Deluge-Logo.svg/1024px-Deluge-Logo.svg.png",
+      "image": "linuxserver/deluge:latest",
+      "network": "pi",
+      "volumes": [
         {
-            "type": 1,
-            "title": "Deluge",
-            "name": "deluge",
-            "description": "Headless BitTorrent client",
-            "categories": [
-                "torrent"
-            ],
-            "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Deluge-Logo.svg/1024px-Deluge-Logo.svg.png",
-            "image": "linuxserver/deluge:latest",
-            "network": "pi",
-            "volumes": [
-                {
-                    "container": "/config",
-                    "bind": "/volumes/deluge"
-                }
-            ],
-            "labels": [
-                {
-                    "name": "traefik.http.routers.deluge.rule",
-                    "value": "Host(`deluge.pi.com`)"
-                },
-                {
-                    "name": "traefik.http.services.deluge.loadbalancer.server.port",
-                    "value": "8112"
-                },
-                {
-                    "name": "traefik.enable",
-                    "value": "true"
-                }
-            ]
+          "container": "/config",
+          "bind": "/volumes/deluge"
         }
-    ]
+      ],
+      "labels": [
+        {
+          "name": "traefik.http.routers.deluge.rule",
+          "value": "Host(`deluge.pi.com`)"
+        },
+        {
+          "name": "traefik.http.services.deluge.loadbalancer.server.port",
+          "value": "8112"
+        },
+        {
+          "name": "traefik.enable",
+          "value": "true"
+        }
+      ]
+    }
+  ]
 }
