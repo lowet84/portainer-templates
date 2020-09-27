@@ -6,4 +6,5 @@ RUN yarn install
 ADD src /app/src/
 ADD tsconfig.json /app/tsconfig.json
 EXPOSE 3000
+ADD apps.json /app/apps.json
 CMD yarn start
