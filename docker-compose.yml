@@ -34,6 +34,13 @@ services:
     networks:
       - pi
 
+  templatizer:
+    image: lowet84/templatizer
+    restart: always
+    container_name: templatizer
+    networks:
+      - pi
+
 volumes:
   portainer:
     external: true

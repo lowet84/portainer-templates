@@ -5,7 +5,7 @@ import {readFileSync} from 'fs'
 
 const app = express()
 
-const apps: App[] = JSON.parse(readFileSync('./src/apps.json','utf8'))
+const apps: App[] = JSON.parse(readFileSync('./apps.json','utf8'))
 
 const getTemplates = (domain: string): TemplateCollection => {
   return {
